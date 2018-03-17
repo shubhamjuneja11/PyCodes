@@ -4,23 +4,31 @@ class Node:
         self.right=None
         self.val=value
 
-    def printInorder(root):
+def printInorder(root):
         if(root):
             printInorder(root.left)
             print(root.val)
             printInorder(root.right)
 
-    def printPostorder(root):
+def printPostorder(root):
         if(root):
             printPostorder(root.left)
             printPostorder(root.right)
             print(root.val)
 
-    def printPreorder(root):
+def printPreorder(root):
         if(root):
             print(root.val)
             printPreorder(root.left)
             printPreorder(root.right)
-    if __name__=="__main__":
-        n=Node(1);
-        print('h')
+root = Node(1)
+root.left      = Node(2)
+root.right     = Node(3)
+root.left.left  = Node(4)
+root.left.right  = Node(5)
+print ("Preorder traversal of binary tree is")
+printPreorder(root)
+print ("\nInorder traversal of binary tree is")
+printInorder(root)
+print ("\nPostorder traversal of binary tree is")
+printPostorder(root)
